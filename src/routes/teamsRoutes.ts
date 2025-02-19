@@ -1,11 +1,11 @@
 import express from "express";
 import {
-getAllTeams
+getAllTeams,getDriverInTeam 
 } from "../controllers/teamsController";
 
 const router = express.Router();
 
 router
-.get("/", getAllTeams);
+.get("/", getDriverInTeam );
 
 export default router;

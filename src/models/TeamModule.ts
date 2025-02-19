@@ -29,8 +29,15 @@ const TeamSchema = new mongoose.Schema({
     },
     drivers: [
         {
-            driver_id: { type: mongoose.Schema.Types.ObjectId, ref: "Driver" },
-            position: Number,
+           position: {
+                type: Number,
+                required: true,
+            },
+            driver_id: {
+                type: String,
+                required: true,
+            },
+            
         },
     ],
     image: {

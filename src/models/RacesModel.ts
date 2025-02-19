@@ -35,8 +35,8 @@ const RaceSchema = new mongoose.Schema({
                     required: true,
                 },
                 driver_id: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    ref: "Driver",
+                    type: String,
+      
                     required: true,
                 },
                 time: {

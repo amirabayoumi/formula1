@@ -10,7 +10,10 @@ export const getAllCircuits = async (req: Request, res: Response) => {
     try { 
      const { search } = req.query;
        if (search) {
-        const circuits = await Circuit.find({ name: search });
+        // const circuits = await Circuit.find({ name: search });
+        // res.status(200).json(circuits);
+        // search insensitive
+        const circuits = await Circuit.find({ name: { $regex: search, $options: "i" } });
         res.status(200).json(circuits);
       } else {
         const circuits = await Circuit.find();
