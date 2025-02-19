@@ -6,7 +6,7 @@ import { Driver } from "../models/DriverModel";
 
 
 
-// get all drivers with flag and search query by name 
+// get all drivers with flag and search query by name  ?search = name
 // api/drivers
 export const getAllDrivers = async (req: Request, res: Response) => {
   try { 
