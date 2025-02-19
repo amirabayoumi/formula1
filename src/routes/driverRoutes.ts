@@ -1,11 +1,11 @@
 import express from "express";
 import {
-  getAllDrivers, getDriverByName, addFlagSvgToDriver
+  getAllDrivers,
 } from "../controllers/driverController";
 
 const router = express.Router();
 
 router
-.get("/", getAllDrivers).get("/search", getDriverByName).get("/with-flag", addFlagSvgToDriver);
+.get("/", getAllDrivers)
 
 export default router;

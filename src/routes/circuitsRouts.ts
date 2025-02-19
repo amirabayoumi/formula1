@@ -1,11 +1,10 @@
 import express from "express";
 import {
-getAllCircuits,getCircuitByName
+getAllCircuits
 } from "../controllers/circuitsController";
 
 const router = express.Router();
 
 router
-.get("/", getAllCircuits).get("/search", getCircuitByName);
-
+.get("/", getAllCircuits)
 export default router;
