@@ -1,10 +1,10 @@
 import express from "express";
 import {
-getAllRaces, getRaceResults, getAllRacesWithTime} from "../controllers/raceController";
+getAllRaces} from "../controllers/raceController";
 
 const router = express.Router();
 
 router
-.get("/", getAllRacesWithTime).get("/:id", getRaceResults)
+.get("/", getAllRaces)
 
 export default router;
