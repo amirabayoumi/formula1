@@ -7,7 +7,7 @@ import { Team } from "../models/TeamModule";
 //get all teams
 export const getAllTeams = async (req: Request, res: Response) => {
     try {
-        const teams = await Team.find();
+        const teams = await Team.find().populate("drivers");
         res.status(200).json(teams);
     } catch (error) {
         if (error instanceof ValidationError) {
