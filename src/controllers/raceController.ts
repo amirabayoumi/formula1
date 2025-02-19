@@ -60,19 +60,21 @@ export const getAllRacesWithTime = async (req: Request, res: Response) => {
 //race_result 
 const formattedRaces = races.map((race) => {
   const formattedResults = race.race_results.map((result) => {
+    console.log(result);
     const position = result.position;
     const time = position === 1
       ? new Date(result.time).toISOString().slice(11, 19)
       : `+${result.time / 1000}`;
 
     return {
-      driver_id: result.driver_id,
+      driver_id: result._id,
       position,
       time,
       points : result.points
     };
   });
 
+console.log(formattedResults);
 
   return {
 
@@ -92,7 +94,7 @@ const formattedRaces = races.map((race) => {
     if (error instanceof ValidationError) {
       res.status(400).json({ message: error.message });
     } else {
-      res.status(500).json({ message: "Error creating vehicle", error });
+      res.status(500).json({ message: "something went wrong", error });
     }
   }
 };
